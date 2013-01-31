@@ -29,6 +29,8 @@ namespace edwinspire {
 			public bool TestConnection ();
 			[Description (blurb = "Intenta conectarse con la base de datos con el string de conexion", nick = "TryConnect")]
 			public static bool TryConnect (string Connection);
+			[Description (blurb = "", nick = "Funcion exec_params con el minimo de parametros")]
+			public static Postgres.Result exec_params_minimal (ref Postgres.Database db, string command, string[] paramValues);
 			[Description (blurb = "", nick = "Construtor con argumentos")]
 			public PostgreSqldb.with_args (string user, string pwd, string host, string dataBase, uint port = 0, bool ssl = false, uint timeOut = 0);
 		}

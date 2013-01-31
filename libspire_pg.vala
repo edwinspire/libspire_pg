@@ -93,7 +93,6 @@ return Retorno;
 
 }
 
-
 [Description(nick = "PostgreSqldb", blurb = "Clase de acceso a Postgres")]
 public class PostgreSqldb :GLib.Object {
 
@@ -101,6 +100,11 @@ public ConnectionParameters ParamCnx = ConnectionParameters();
 
 public PostgreSqldb(){
 
+}
+
+[Description(nick = "Funcion exec_params con el minimo de parametros", blurb = "")]
+public static Result exec_params_minimal(ref Database db, string command, string[] paramValues){
+return db.exec_params (command,  paramValues.length, null, paramValues, null, null, 0);
 }
 
 [Description(nick = "Construtor con argumentos", blurb = "")]

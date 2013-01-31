@@ -92,6 +92,7 @@ gboolean edwinspire_pg_sql_pg_field_as_bool (edwinspirepgSQLPgField* self);
 GType edwinspire_pg_sql_postgre_sqldb_get_type (void) G_GNUC_CONST;
 edwinspirepgSQLPostgreSqldb* edwinspire_pg_sql_postgre_sqldb_new (void);
 edwinspirepgSQLPostgreSqldb* edwinspire_pg_sql_postgre_sqldb_construct (GType object_type);
+PGresult* edwinspire_pg_sql_postgre_sqldb_exec_params_minimal (PGconn** db, const gchar* command, gchar** paramValues, int paramValues_length1);
 edwinspirepgSQLPostgreSqldb* edwinspire_pg_sql_postgre_sqldb_new_with_args (const gchar* user, const gchar* pwd, const gchar* host, const gchar* dataBase, guint port, gboolean ssl, guint timeOut);
 edwinspirepgSQLPostgreSqldb* edwinspire_pg_sql_postgre_sqldb_construct_with_args (GType object_type, const gchar* user, const gchar* pwd, const gchar* host, const gchar* dataBase, guint port, gboolean ssl, guint timeOut);
 gboolean edwinspire_pg_sql_postgre_sqldb_TestConnection (edwinspirepgSQLPostgreSqldb* self);
